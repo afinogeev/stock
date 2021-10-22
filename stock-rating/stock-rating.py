@@ -42,7 +42,7 @@ def getTech():
 
     driver = webdriver.Chrome(options=options)   
     driver.get('https://ru.investing.com/equities/russia')
-    driver.find_element_by_xpath('//*[@id="all"]').click()
+    driver.find_element_by_xpath('//*[@id="13666"]').click()
     print('waiting data')
     time.sleep(5)
     driver.find_element_by_xpath('//*[@id="filter_technical"]').click()
@@ -108,7 +108,7 @@ def compileData(rdata, tdata):
             rdata[key]['fundamental'] = f'https://smart-lab.ru/q/{slKeyF}/f/y/'
             datalist.append(rdata[key])
         except:
-            print(f'{key} ticker doesn-t exist')
+            print(f'{key} ticker doesn-t find')
     return datalist
 
 print('getting rating')
